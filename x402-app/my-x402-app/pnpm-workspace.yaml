@@ -1,0 +1,6 @@
+packages:
+  - packages/paywall
+  - vendors/x402/typescript/packages/mechanisms/stellar
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
