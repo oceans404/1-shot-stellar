@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "x402 TADA Demo",
-  description: "Payment-gated content using x402 on Stellar",
+  title: "YouTube Paywall",
+  description: "Pay-per-view YouTube video using x402 on Stellar",
 };
 
 export default function RootLayout({

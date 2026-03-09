@@ -1,4 +1,4 @@
-export default function TadaPage() {
+export default function VideoPage() {
   return (
     <div style={{
       fontFamily: "system-ui, -apple-system, sans-serif",
@@ -11,7 +11,7 @@ export default function TadaPage() {
       justifyContent: "center",
       margin: 0,
     }}>
-      <div style={{ textAlign: "center", padding: 48 }}>
+      <div style={{ textAlign: "center", padding: 48, maxWidth: 800, width: "100%" }}>
         <div style={{
           display: "inline-flex",
           alignItems: "center",
@@ -36,22 +36,41 @@ export default function TadaPage() {
         </div>
 
         <h1 style={{
-          fontSize: 120,
+          fontSize: 36,
           fontWeight: 800,
-          letterSpacing: -4,
-          background: "linear-gradient(135deg, #7c66dc, #5746af, #30a46c)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
           marginBottom: 24,
-          lineHeight: 1,
+          lineHeight: 1.2,
         }}>
-          TADA!
+          Enjoy your video
         </h1>
 
-        <p style={{ fontSize: 18, color: "#a1a1a1", maxWidth: 500, lineHeight: 1.6 }}>
-          You paid $0.01 USDC on Stellar to unlock this page.
-          This content was gated behind an x402 paywall &mdash; no accounts,
-          no OAuth, no subscriptions.
+        <div style={{
+          position: "relative",
+          paddingBottom: "56.25%",
+          height: 0,
+          overflow: "hidden",
+          borderRadius: 12,
+          marginBottom: 24,
+        }}>
+          <iframe
+            src="https://www.youtube.com/embed/hMLcKtVwF-A"
+            title="YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+          />
+        </div>
+
+        <p style={{ fontSize: 16, color: "#a1a1a1", lineHeight: 1.6 }}>
+          You paid $1.00 USDC on Stellar to unlock this video.
+          No accounts, no OAuth, no subscriptions &mdash; just x402.
         </p>
       </div>
 

@@ -37,7 +37,7 @@ Your app has four components that work together in a simple flow:
          │                        │                        │                     │
     5.   │ <── 200 + page ──────  │                        │                     │
          │                        │                        │                     │
-    6.   │                        │ ── settle payment ──>  │ ── tx ──>          │
+    6.   │                        │ ── settle payment ──>  │ ── tx ──>           │
          │                        │                        │                     │
          ▼                        ▼                        ▼                     ▼
 ```
