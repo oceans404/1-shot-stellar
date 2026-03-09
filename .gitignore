@@ -4,6 +4,8 @@ node_modules/
 .env*.local
 .next/
 dist/
+# Allow vendored pre-built packages (no source to rebuild from)
+!x402-app/video-paywall-app/vendors/**/dist/
 .turbo/
 *.tsbuildinfo
 .DS_Store
