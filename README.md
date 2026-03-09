@@ -8,6 +8,6 @@ This is a collection of 1-shot (single prompt) apps built on Stellar — each fo
 
 ## Projects
 
-| Folder | Description | Claude Prompt | Resulting App |
-|--------|-------------|----------------|------|
-| `x402-app` | Payment-gated Next.js app using the x402 protocol. Gates a page behind a USDC micropayment on Stellar. | *"Build a payment gated app for [this youtube video](https://www.youtube.com/watch?v=hMLcKtVwF-A) for $1 following this guide: https://raw.githubusercontent.com/oceans404/1-shot-stellar/main/x402-app/Guide.md"* | [Payment gated video app](https://1-shot-stellar-video-paywall.vercel.app) |
+| Folder | Description | Guide | Claude Prompt | Resulting App |
+|--------|-------------|-------|----------------|------|
+| `x402-app` | Payment-gated Next.js app using the x402 protocol. Gates a page behind a USDC micropayment on Stellar. | [Guide.md](x402-app/Guide.md) | *"Build a payment gated app for [this youtube video](https://www.youtube.com/watch?v=hMLcKtVwF-A) for $1 following this guide: https://raw.githubusercontent.com/oceans404/1-shot-stellar/main/x402-app/Guide.md"* | [Payment gated video app](https://1-shot-stellar-video-paywall.vercel.app) |
