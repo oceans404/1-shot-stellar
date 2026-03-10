@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "YouTube Paywall",
-  description: "Pay-per-view YouTube video using x402 on Stellar",
+  title: "Video Paywall Demo",
+  description: "Payment-gated video content using x402 on Stellar",
 };
 
 export default function RootLayout({
@@ -12,9 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

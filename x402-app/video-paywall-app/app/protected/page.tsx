@@ -11,7 +11,7 @@ export default function VideoPage() {
       justifyContent: "center",
       margin: 0,
     }}>
-      <div style={{ textAlign: "center", padding: 48, maxWidth: 800, width: "100%" }}>
+      <div style={{ textAlign: "center", padding: 48, maxWidth: 960, width: "100%" }}>
         <div style={{
           display: "inline-flex",
           alignItems: "center",
@@ -36,25 +36,33 @@ export default function VideoPage() {
         </div>
 
         <h1 style={{
-          fontSize: 36,
+          fontSize: 48,
           fontWeight: 800,
+          letterSpacing: -2,
+          background: "linear-gradient(135deg, #7c66dc, #5746af, #30a46c)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
           marginBottom: 24,
-          lineHeight: 1.2,
+          lineHeight: 1.1,
         }}>
-          Enjoy your video
+          Enjoy the Video
         </h1>
+
+        <p style={{ fontSize: 16, color: "#a1a1a1", marginBottom: 32, lineHeight: 1.6 }}>
+          You paid $1.00 USDC on Stellar to unlock this content.
+        </p>
 
         <div style={{
           position: "relative",
+          width: "100%",
           paddingBottom: "56.25%",
-          height: 0,
-          overflow: "hidden",
           borderRadius: 12,
-          marginBottom: 24,
+          overflow: "hidden",
+          border: "1px solid rgba(255,255,255,0.1)",
         }}>
           <iframe
             src="https://www.youtube.com/embed/hMLcKtVwF-A"
-            title="YouTube video"
+            title="Premium Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             style={{
@@ -67,11 +75,6 @@ export default function VideoPage() {
             }}
           />
         </div>
-
-        <p style={{ fontSize: 16, color: "#a1a1a1", lineHeight: 1.6 }}>
-          You paid $1.00 USDC on Stellar to unlock this video.
-          No accounts, no OAuth, no subscriptions &mdash; just x402.
-        </p>
       </div>
 
       <div style={{ position: "fixed", bottom: 24, fontSize: 13, color: "#525252" }}>

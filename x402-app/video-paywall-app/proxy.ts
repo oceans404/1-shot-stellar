@@ -4,6 +4,7 @@ import { ExactStellarScheme } from "@x402/stellar/exact/server";
 import { createPaywall } from "@x402-stellar/paywall";
 import { stellarPaywall } from "@x402-stellar/paywall/stellar";
 
+// --- Environment variable validation ---
 const requiredEnvVars = [
   "FACILITATOR_URL",
   "SERVER_STELLAR_ADDRESS",
@@ -12,11 +13,12 @@ const requiredEnvVars = [
 for (const key of requiredEnvVars) {
   if (!process.env[key]) {
     throw new Error(
-      `Missing required environment variable: ${key}. See .env.local setup.`,
+      `Missing required environment variable: ${key}. See .env.local setup in Step 4.`,
     );
   }
 }
 
+// --- Network configuration ---
 const network = (process.env.STELLAR_NETWORK ?? "stellar:testnet") as
   | "stellar:testnet"
   | "stellar:pubnet";
@@ -25,10 +27,13 @@ const isMainnet = network === "stellar:pubnet";
 
 if (isMainnet && !process.env.SOROBAN_RPC_URL) {
   throw new Error(
-    "SOROBAN_RPC_URL is required when STELLAR_NETWORK is stellar:pubnet.",
+    "SOROBAN_RPC_URL is required when STELLAR_NETWORK is stellar:pubnet. " +
+    "Set it to a mainnet Soroban RPC endpoint (e.g., https://mainnet.sorobanrpc.com). " +
+    "See: https://developers.stellar.org/docs/data/apis/rpc/providers",
   );
 }
 
+// --- Facilitator client ---
 const facilitatorClient = new HTTPFacilitatorClient({
   url: process.env.FACILITATOR_URL!,
   createAuthHeaders: process.env.FACILITATOR_API_KEY
@@ -41,10 +46,11 @@ const facilitatorClient = new HTTPFacilitatorClient({
     : undefined,
 });
 
+// --- Paywall UI ---
 const paywall = createPaywall()
   .withNetwork(stellarPaywall)
   .withConfig({
-    appName: "YouTube Paywall",
+    appName: "Video Paywall",
     ...(isMainnet && {
       testnet: false,
       stellarRpcUrl: process.env.SOROBAN_RPC_URL,
@@ -52,11 +58,13 @@ const paywall = createPaywall()
   })
   .build();
 
+// --- Resource server ---
 const server = new x402ResourceServer(facilitatorClient).register(
   network,
   new ExactStellarScheme(),
 );
 
+// --- Payment proxy ---
 export const proxy = paymentProxy(
   {
     "/protected": {
@@ -68,7 +76,7 @@ export const proxy = paymentProxy(
           payTo: process.env.SERVER_STELLAR_ADDRESS!,
         },
       ],
-      description: "Pay $1 to watch this video",
+      description: "Access to premium video content",
     },
   },
   server,

@@ -1,5 +1,5 @@
 {
-  "name": "youtube-paywall",
+  "name": "video-paywall-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "@x402/core": "~2.6.0",
     "@x402/next": "~2.6.0",
-    "@x402/stellar": "workspace:*",
+    "@x402/stellar": "~2.6.0",
     "@x402-stellar/paywall": "workspace:*",
     "next": "16.1.6",
     "react": "19.2.3",

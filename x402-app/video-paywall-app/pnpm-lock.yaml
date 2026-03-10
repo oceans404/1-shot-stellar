@@ -23,8 +23,8 @@ importers:
         specifier: ~2.6.0
         version: 2.6.0(bufferutil@4.1.0)(ethers@6.16.0(bufferutil@4.1.0)(utf-8-validate@6.0.6))(next@16.1.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(typescript@5.9.3)(utf-8-validate@6.0.6)
       '@x402/stellar':
-        specifier: workspace:*
-        version: link:vendors/x402/typescript/packages/mechanisms/stellar
+        specifier: ~2.6.0
+        version: 2.6.0
       next:
         specifier: 16.1.6
         version: 16.1.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -73,8 +73,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       '@x402/stellar':
-        specifier: workspace:*
-        version: link:../../vendors/x402/typescript/packages/mechanisms/stellar
+        specifier: ~2.6.0
+        version: 2.6.0
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -96,15 +96,6 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
-
-  vendors/x402/typescript/packages/mechanisms/stellar:
-    dependencies:
-      '@stellar/stellar-sdk':
-        specifier: ^14.5.0
-        version: 14.6.1
-      '@x402/core':
-        specifier: ~2.6.0
-        version: 2.6.0
 
 packages:
 
@@ -1700,6 +1691,9 @@ packages:
     peerDependenciesMeta:
       '@x402/paywall':
         optional: true
+
+  '@x402/stellar@2.6.0':
+    resolution: {integrity: sha512-KqoOhdQrbEqGpa+HNx5W4Bqh7YWdIQgwDMaQt2c1H67gfEIu48ygbzqMMYNjIG5vZVURg3BDuMIu3hs4TQNB/A==}
 
   '@xrplf/isomorphic@1.0.1':
     resolution: {integrity: sha512-0bIpgx8PDjYdrLFeC3csF305QQ1L7sxaWnL5y71mCvhenZzJgku9QsA+9QCXBC1eNYtxWO/xR91zrXJy2T/ixg==}
@@ -4802,7 +4796,7 @@ snapshots:
   '@solana/web3.js@1.98.4(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@6.0.6)':
     dependencies:
       '@babel/runtime': 7.28.6
-      '@noble/curves': 1.9.1
+      '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@solana/buffer-layout': 4.0.1
       '@solana/codecs-numbers': 2.3.0(typescript@5.9.3)
@@ -5735,6 +5729,13 @@ snapshots:
       - ethers
       - typescript
       - utf-8-validate
+
+  '@x402/stellar@2.6.0':
+    dependencies:
+      '@stellar/stellar-sdk': 14.6.1
+      '@x402/core': 2.6.0
+    transitivePeerDependencies:
+      - debug
 
   '@xrplf/isomorphic@1.0.1(bufferutil@4.1.0)(utf-8-validate@6.0.6)':
     dependencies:
@@ -7013,7 +7014,7 @@ snapshots:
 
   ripple-keypairs@2.0.0(bufferutil@4.1.0)(utf-8-validate@6.0.6):
     dependencies:
-      '@noble/curves': 1.9.1
+      '@noble/curves': 1.9.7
       '@xrplf/isomorphic': 1.0.1(bufferutil@4.1.0)(utf-8-validate@6.0.6)
       ripple-address-codec: 5.0.0(bufferutil@4.1.0)(utf-8-validate@6.0.6)
     transitivePeerDependencies:
